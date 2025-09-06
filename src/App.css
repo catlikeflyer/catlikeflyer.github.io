@@ -67,7 +67,7 @@ a:hover { filter: brightness(1.2); }
   position: sticky; top: 0; width: 100%; z-index: 1000;
   border-bottom: 1px solid var(--border-color);
 }
-.nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; }
+.nav { display: flex; justify-content: space-between; align-items: center; max-width: 100vw; margin: 0 auto; padding: 1rem 2rem; }
 .nav-logo { font-weight: 700; }
 .nav-links { flex-grow: 1; text-align: center; }
 .nav-links a { margin: 0 1.5rem; font-weight: 400; }
