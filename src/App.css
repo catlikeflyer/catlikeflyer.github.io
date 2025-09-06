@@ -1,38 +1,179 @@
-.App {
-  text-align: center;
+/* --- Google Font & Global Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- 🎨 COLOR VARIABLES 🎨 --- */
+:root {
+  /* Dark Theme (Default) */
+  --bg-color: #0a192f;
+  --card-bg-color: #112240;
+  --primary-text-color: #d5dffd;
+  --secondary-text-color: #b0bbde;
+  --accent-color: #00d4d8; /* Techy Cyan/Mint */
+  --border-color: #1d2d50;
+  --shadow-color: rgba(100, 255, 218, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body.light {
+  /* Light Theme */
+  --bg-color: #f0f5f9;
+  --card-bg-color: #ffffff;
+  --primary-text-color: #1e293b;
+  --secondary-text-color: #475569;
+  --accent-color: #007bff; /* Classic Blue */
+  --border-color: #dbe4f0;
+  --shadow-color: rgba(0, 123, 255, 0.15);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* --- Base Styles --- */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* --- Layout & Animations --- */
+.main-content { max-width: 80rem; margin: 0 auto; padding: 0 20px; width: 100%;}
+@keyframes fadeInSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border-color);
+  animation: fadeInSlideUp 0.8s ease-out forwards;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+section:last-of-type { border-bottom: none; }
+
+/* --- Typography --- */
+h1, h3.section-title { color: var(--accent-color); text-align: center; }
+h1 { font-size: 3.5rem; }
+h3.section-title { font-size: 2.2rem; margin-bottom: 40px; }
+h4 { color: var(--primary-text-color); font-size: 1.25rem; }
+h5 { color: var(--accent-color); font-size: 1.1rem; margin: 0 0 0.25rem 0; }
+p { color: var(--secondary-text-color); line-height: 1.8; font-size: 1.1rem; max-width: 700px; margin: 1rem auto; text-align: center;}
+a { color: var(--accent-color); text-decoration: none; transition: all 0.3s ease; }
+a:hover { filter: brightness(1.2); }
+
+/* --- Header, Nav & Theme Toggle --- */
+.header {
+  background-color: color-mix(in srgb, var(--bg-color) 85%, transparent);
+  backdrop-filter: blur(10px);
+  position: sticky; top: 0; width: 100%; z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+.nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; }
+.nav-logo { font-weight: 700; }
+.nav-links { flex-grow: 1; text-align: center; }
+.nav-links a { margin: 0 1.5rem; font-weight: 400; }
+.theme-toggle {
+  background: var(--card-bg-color); color: var(--accent-color); border: 1px solid var(--border-color);
+  border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;
+}
+.theme-toggle:hover { background: var(--accent-color); color: var(--bg-color); }
+
+/* --- Home Section & Typing Effect --- */
+.home-section {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 80vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+.home-content { position: relative; z-index: 2; padding: 20px; }
+.typing-effect { font-size: 2.5rem; color: var(--primary-text-color); font-weight: 300; margin: 0.5rem 0; min-height: 80px; }
+.typing-effect .cursor { animation: blink 1s step-end infinite; color: var(--accent-color); }
+@keyframes blink { 50% { opacity: 0; } }
+.hero-image-carousel {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 80vh;
+  z-index: 0; overflow: hidden;
+}
+.carousel-image {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+}
+.overlay {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.tagline { font-size: 1.3rem; color: var(--primary-text-color); font-weight: 300; }
+
+/* --- Journey Section --- */
+.journey-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; text-align: left; width: 100%;}
+.journey-column h4 { margin-bottom: 1.5rem; color: var(--primary-text-color); }
+.journey-subheader { margin-top: 2rem; }
+.journey-item { background: var(--card-bg-color); border-left: 4px solid var(--accent-color); padding: 1rem 1.5rem; margin-bottom: 1.5rem; border-radius: 0 8px 8px 0; }
+.journey-item span { color: var(--secondary-text-color); font-size: 0.9rem; }
+.journey-item p { margin: 0.5rem 0 0 0; font-size: 1rem; color: var(--secondary-text-color); text-align: left;}
+
+/* --- Projects & Skills --- */
+.projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left; width: 100%; }
+.project-card { background-color: var(--card-bg-color); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: left;}
+.project-card:hover { transform: translateY(-8px); box-shadow: 0 8px 30px var(--shadow-color); }
+.project-tech { margin: 1rem 0; }
+.tech-tag { background-color: color-mix(in srgb, var(--accent-color) 15%, transparent); color: var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; margin: 0.25rem 0.5rem 0.25rem 0; display: inline-block; }
+.skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+.skill-tag { background-color: var(--card-bg-color); border: 1px solid var(--border-color); padding: 0.7rem 1.2rem; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; }
+.skill-tag:hover { background-color: var(--accent-color); color: var(--bg-color); transform: scale(1.1); }
+
+/* --- Contact Section --- */
+.contact-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  padding: 0.8rem 1.8rem; margin: 0.5rem; border: 2px solid var(--accent-color);
+  border-radius: 50px; color: var(--accent-color); font-weight: 600; transition: all 0.3s ease;
+}
+.contact-button:hover { background-color: var(--accent-color); color: var(--bg-color); transform: translateY(-3px); box-shadow: 0 4px 15px var(--shadow-color); }
+.footer { padding: 2rem; color: var(--secondary-text-color); font-size: 0.9rem; }
+
+.show-more-button {
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+.show-more-button:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
 }
 
-.App-link {
-  color: #61dafb;
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  h1 { font-size: 2.8rem; }
+  .typing-effect { font-size: 1.8rem; min-height: 60px; }
+  h3.section-title { font-size: 1.8rem; }
+  p { font-size: 1rem; }
+  .nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+  .nav-logo { width: 50%; text-align: left; }
+  .theme-toggle { order: 2; }
+  .nav-links { order: 3; width: 100%; text-align: center; margin-top: 1rem; }
+  .nav-links a { margin: 0 0.75rem; }
+  section { padding: 60px 0; }
+  .journey-container { grid-template-columns: 1fr; gap: 0; }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* --- 🔒 Force Dark Theme on Hero Section --- */
+/* This rule targets the home section ONLY when the body has the light class,
+   and resets its variables back to the dark theme values. */
+body.light .home-section {
+  --primary-text-color: #ccd6f6; /* Dark theme primary text */
+  --accent-color: #64ffda;     /* Dark theme accent */
 }
