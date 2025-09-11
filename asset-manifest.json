@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.bde82e8c.css",
-    "main.js": "/static/js/main.7933e115.js",
+    "main.css": "/static/css/main.a9ad0230.css",
+    "main.js": "/static/js/main.7c9c2fb1.js",
     "static/media/ufll.jpg": "/static/media/ufll.05db0f0c1b57ca17da2a.jpg",
     "static/media/heavent.png": "/static/media/heavent.21b5bca8876788c8a4ab.png",
     "static/media/airfacts.png": "/static/media/airfacts.407bbf193cb643dec074.png",
     "static/media/crop.png": "/static/media/crop.a0cd2fc71dc0b04a93e7.png",
     "static/media/swivel.png": "/static/media/swivel.c040625182f14cfb9e68.png",
     "static/media/ainot.png": "/static/media/ainot.ddd7d52b2e47cafd6f6c.png",
+    "static/media/me.jpg": "/static/media/me.e3aea6fb4bfbf022662d.jpg",
     "index.html": "/index.html",
-    "main.bde82e8c.css.map": "/static/css/main.bde82e8c.css.map",
-    "main.7933e115.js.map": "/static/js/main.7933e115.js.map"
+    "main.a9ad0230.css.map": "/static/css/main.a9ad0230.css.map",
+    "main.7c9c2fb1.js.map": "/static/js/main.7c9c2fb1.js.map"
   },
   "entrypoints": [
-    "static/css/main.bde82e8c.css",
-    "static/js/main.7933e115.js"
+    "static/css/main.a9ad0230.css",
+    "static/js/main.7c9c2fb1.js"
   ]
 }
