@@ -13,11 +13,12 @@ import Swivel from "./assets/projects/swivel.png";
 import AiNot from "./assets/projects/ainot.png";
 import Heavent from "./assets/projects/heavent.png";
 import Airfacts from "./assets/projects/airfacts.png";
+import Me from "./assets/me.jpg";
 
 // --- Portfolio Data ---
 const portfolioData = {
   name: "Do Hyun Nam",
-  profileImage: "https://i.imgur.com/d24B281.jpg", // Replace with your image URL
+  profileImage: Me, // Replace with your image URL
   roles: [
     "Software Engineer",
     "Data Engineer",
@@ -249,7 +250,6 @@ const Header = ({ theme, toggleTheme }) => (
         >
           DHNAM.
         </a>
-        {/* ✅ UPDATED NAVBAR LINKS */}
         <div className="hidden md:flex items-center space-x-6">
           <a
             href="#about"
@@ -345,8 +345,8 @@ const Home = () => (
   </section>
 );
 
-const Section = ({ id, title, children }) => (
-  <section id={id} className="py-20 md:py-28">
+const Section = ({ id, title, children, classX }) => (
+  <section id={id} className={`py-20 md:py-28 ${classX}`}>
     <div className="container mx-auto px-4">
       <h2 className="text-3xl md:text-4xl font-bold text-slate-lightest mb-12 text-center">
         {title}
@@ -357,7 +357,7 @@ const Section = ({ id, title, children }) => (
 );
 
 const About = () => (
-  <Section id="about" title="About Me">
+  <Section id="about" title="About Me" classX={"bg-blue-light dark:bg-light-navy dark:text-slate"}>
     <p className="text-center text-lg md:text-xl text-slate max-w-3xl mx-auto">
       {portfolioData.about}
     </p>
@@ -463,7 +463,7 @@ const Projects = () => {
   };
 
   return (
-    <Section id="projects" title="Things I've Built">
+    <Section id="projects" title="Things I've Built" classX={"bg-blue-light dark:bg-light-navy dark:text-slate"}>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayedProjects.map((project, index) => (
           <a
@@ -481,7 +481,6 @@ const Projects = () => {
               alt={project.title}
               className="w-full aspect-video object-cover rounded-md mb-4"
             />
-
             <p
               className="text-slate flex-grow"
               dangerouslySetInnerHTML={createMarkup(project.description)}
