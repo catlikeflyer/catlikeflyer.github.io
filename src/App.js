@@ -14,6 +14,11 @@ import AiNot from "./assets/projects/ainot.png";
 import Heavent from "./assets/projects/heavent.png";
 import Airfacts from "./assets/projects/airfacts.png";
 import Me from "./assets/me.jpg";
+import Cdmx from "./assets/background/cdmx.JPG";
+import Toronto from "./assets/background/toronto.JPG";
+import London from "./assets/background/london.jpg";
+import Seoul from "./assets/background/seoul.jpg";
+import Tokyo from "./assets/background/tokyo.jpg";
 
 // --- Portfolio Data ---
 const portfolioData = {
@@ -26,11 +31,7 @@ const portfolioData = {
     "Pokemon Trainer",
   ],
   tagline: "I bring data to life ✨ and build cool things with code. 🚀",
-  heroImages: [
-    "https://images.unsplash.com/photo-1555066931-4365d1469de5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4-0-3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%33D%3D",
-    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4-0-3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4-0-3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ],
+  heroImages: [Cdmx, Toronto, London, Seoul, Tokyo],
   about:
     "Hello! I'm a creative engineer who loves diving into data and building awesome software. Whether it's architecting a scalable data pipeline or developing a slick user interface, I'm all about tackling challenges with a blend of logic and imagination. My goal? To craft tech that's not just powerful, but also a joy to use.",
   experience: [
@@ -357,7 +358,11 @@ const Section = ({ id, title, children, classX }) => (
 );
 
 const About = () => (
-  <Section id="about" title="About Me" classX={"bg-blue-light dark:bg-light-navy dark:text-slate"}>
+  <Section
+    id="about"
+    title="About Me"
+    classX={"bg-blue-light dark:bg-light-navy dark:text-slate"}
+  >
     <p className="text-center text-lg md:text-xl text-slate max-w-3xl mx-auto">
       {portfolioData.about}
     </p>
@@ -463,7 +468,11 @@ const Projects = () => {
   };
 
   return (
-    <Section id="projects" title="Things I've Built" classX={"bg-blue-light dark:bg-light-navy dark:text-slate"}>
+    <Section
+      id="projects"
+      title="Things I've Built"
+      classX={"bg-blue-light dark:bg-light-navy dark:text-slate"}
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayedProjects.map((project, index) => (
           <a
@@ -528,24 +537,58 @@ const Skills = () => (
 );
 
 const Contact = () => (
-  <Section id="contact" title="Get In Touch">
+  <Section
+    id="contact"
+    title="📬 Get In Touch "
+    classX={"bg-blue-light dark:bg-light-navy dark:text-slate"}
+  >
     <div className="text-center max-w-2xl mx-auto">
       <p className="text-slate text-lg mb-8">
         I'm currently open to new opportunities and collaborations. Whether you
         have a question or just want to say hi, my inbox is always open!
       </p>
-      <a
-        href={`mailto:${portfolioData.contact.email}`}
-        className="inline-block text-cyan border border-cyan rounded text-lg px-8 py-4 hover:bg-cyan/10 transition-colors"
-      >
-        Say Hello
-      </a>
+      <div className="flex justify-center space-x-6 mb-8">
+        <a
+          href={`mailto:${portfolioData.contact.email}`}
+          className="text-slate-light hover:text-cyan text-3xl transition-colors"
+          aria-label="Email"
+        >
+          <FaEnvelope />
+        </a>
+        <a
+          href={portfolioData.contact.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-slate-light hover:text-cyan text-3xl transition-colors"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href={portfolioData.contact.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-slate-light hover:text-cyan text-3xl transition-colors"
+          aria-label="GitHub"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href={portfolioData.contact.youtube}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-slate-light hover:text-cyan text-3xl transition-colors"
+          aria-label="YouTube"
+        >
+          <FaYoutube />
+        </a>
+      </div>
     </div>
   </Section>
 );
 
 const Footer = () => (
-  <footer className="py-6">
+  <footer className="py-6 bg-navy">
     <div className="container mx-auto px-4 text-center text-slate text-sm">
       <p>
         Designed & Built by {portfolioData.name}, {new Date().getFullYear()}
@@ -574,13 +617,11 @@ function App() {
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Home />
-        <div className="relative bg-white dark:bg-navy">
           <About />
           <Journey />
           <Projects />
           <Skills />
           <Contact />
-        </div>
       </main>
       <Footer />
     </>
