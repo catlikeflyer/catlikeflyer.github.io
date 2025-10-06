@@ -1,20 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.a9ad0230.css",
-    "main.js": "/static/js/main.7c9c2fb1.js",
+    "main.css": "/static/css/main.39e61708.css",
+    "main.js": "/static/js/main.6fa17bea.js",
     "static/media/ufll.jpg": "/static/media/ufll.05db0f0c1b57ca17da2a.jpg",
     "static/media/heavent.png": "/static/media/heavent.21b5bca8876788c8a4ab.png",
     "static/media/airfacts.png": "/static/media/airfacts.407bbf193cb643dec074.png",
+    "static/media/tokyo.jpg": "/static/media/tokyo.99622533a572828b48e0.jpg",
+    "static/media/london.jpg": "/static/media/london.7e548cd7bbf6d4326cc5.jpg",
+    "static/media/seoul.jpg": "/static/media/seoul.207de641a6b354182501.jpg",
+    "static/media/toronto.JPG": "/static/media/toronto.05ca5a69dfa27df40c39.JPG",
     "static/media/crop.png": "/static/media/crop.a0cd2fc71dc0b04a93e7.png",
+    "static/media/cdmx.JPG": "/static/media/cdmx.7a5ae08c25a108c6b1e6.JPG",
     "static/media/swivel.png": "/static/media/swivel.c040625182f14cfb9e68.png",
     "static/media/ainot.png": "/static/media/ainot.ddd7d52b2e47cafd6f6c.png",
     "static/media/me.jpg": "/static/media/me.e3aea6fb4bfbf022662d.jpg",
     "index.html": "/index.html",
-    "main.a9ad0230.css.map": "/static/css/main.a9ad0230.css.map",
-    "main.7c9c2fb1.js.map": "/static/js/main.7c9c2fb1.js.map"
+    "main.39e61708.css.map": "/static/css/main.39e61708.css.map",
+    "main.6fa17bea.js.map": "/static/js/main.6fa17bea.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9ad0230.css",
-    "static/js/main.7c9c2fb1.js"
+    "static/css/main.39e61708.css",
+    "static/js/main.6fa17bea.js"
   ]
 }
